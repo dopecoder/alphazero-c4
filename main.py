@@ -10,8 +10,7 @@ from utils import *
 log = logging.getLogger(__name__)
 
 coloredlogs.install(level='DEBUG')  # Change this to DEBUG to see more info.
-from google.colab import drive
-drive.mount('/content/gdrive')
+
 args = dotdict({
     'numIters': 50,
     'numEps': 100,              # Number of complete self-play games to simulate during a new iteration.
@@ -22,7 +21,7 @@ args = dotdict({
     'arenaCompare': 40,         # Number of games to play during arena play to determine if new net will be accepted.
     'cpuct': 1,
 
-    'checkpoint': '/content/gdrive/azc4',
+    'checkpoint': './temp/',
     'load_model': False,
     'load_folder_file': ('/dev/models/8x100x50','best.pth.tar'),
     'numItersForTrainExamplesHistory': 20,
